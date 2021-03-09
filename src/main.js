@@ -10,7 +10,7 @@ const simplifyUrl = (url) => {
   return url.replace('https://', '')
     .replace('http://', '')
     .replace('www.', '')
-    .replace(/\/.*/, '')// 删除 / 开头的内容
+    .replace(/\/.*/, '');// 删除 / 开头的内容
 }
 
 const render = () => {
@@ -38,7 +38,7 @@ const render = () => {
       render();
     });
   });
-}
+};
 render();
 
 $('.addButton')
@@ -67,15 +67,15 @@ $('.addButton')
 window.onbeforeunload = () => {
   console.log('页面要关闭了');
   const string = JSON.stringify(hashMap);//对象变字符串
-  localStorage.setItem('x', string)
-}
+  localStorage.setItem('x', string);
+};
 
 $(document).on('keypress', (e) => {
   // const key = e.key
-  const { key } = e
+  const { key } = e;
   for (let i = 0; i < hashMap.length; i++) {
     if (hashMap[i].logo.toLowerCase() === key) {
-      window.open(hashMap[i].url)
+      window.open(hashMap[i].url);
     }
   }
-})
+});

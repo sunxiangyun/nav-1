@@ -118,6 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
+/*jshint esversion: 6 */
 var $siteList = $('.siteList');
 var $lastLi = $siteList.find('li.last');
 var x = localStorage.getItem('x');
